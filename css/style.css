@@ -1,0 +1,1102 @@
+/* =====================================================
+   JESTO — CAMPUS FASHION
+   ===================================================== */
+
+:root {
+    --black: #080808;
+    --black-2: #111111;
+    --white: #f7f7f5;
+    --gray: #ededeb;
+    --mid-gray: #777;
+    --pink: #ff2f92;
+    --border: #d8d8d5;
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ================= HEADER ================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    padding: 0 5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    color: white;
+
+    background: rgba(8, 8, 8, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.logo,
+.footer-logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--pink);
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 35px;
+}
+
+.desktop-nav a {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.desktop-nav a:hover {
+    opacity: 1;
+    color: var(--pink);
+}
+
+.header-shop {
+    border: 1px solid rgba(255,255,255,0.7);
+    padding: 11px 18px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.header-shop:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white;
+    margin: 5px 0;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 650px;
+    overflow: hidden;
+    background: #111;
+    color: white;
+}
+
+.hero-image {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 62%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: right center;
+
+    filter:
+        grayscale(100%)
+        contrast(1.05)
+        brightness(0.72);
+
+    z-index: 1;
+}
+.hero-dark {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080808 0%,
+            rgba(8,8,8,0.98) 25%,
+            rgba(8,8,8,0.82) 38%,
+            rgba(8,8,8,0.35) 53%,
+            rgba(8,8,8,0.05) 72%,
+            rgba(8,8,8,0) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+
+    height: 100%;
+
+    max-width: 1250px;
+    margin: auto;
+
+    padding: 150px 6vw 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-label,
+.small-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.hero-label {
+    margin-bottom: 24px;
+    color: #ddd;
+}
+
+.hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(4rem, 9vw, 9rem);
+    line-height: 0.84;
+    letter-spacing: -0.075em;
+    font-weight: 700;
+
+    max-width: 900px;
+}
+
+.hero h1 span {
+    color: var(--pink);
+}
+
+.hero-content p {
+    max-width: 420px;
+
+    margin-top: 35px;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: #ddd;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    margin-top: 30px;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 23px;
+
+    background: white;
+    color: black;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: var(--pink);
+    color: white;
+}
+
+.text-btn {
+    color: white;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 28px;
+    left: 6vw;
+    right: 6vw;
+
+    z-index: 3;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+
+    color: #ddd;
+}
+
+.hero-side {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+
+    z-index: 3;
+
+    writing-mode: vertical-rl;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+}
+
+
+/* ================= CATEGORY ================= */
+
+.category-section {
+    padding: 110px 5vw 120px;
+    background: var(--white);
+}
+
+.section-top {
+    margin-bottom: 45px;
+}
+
+.section-top h2,
+.shop-heading h2,
+.brand-content h2,
+.steps-heading h2,
+.cta-inner h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.88;
+    letter-spacing: -0.07em;
+
+    margin-top: 16px;
+}
+
+.section-top h2 span,
+.shop-heading h2 span,
+.steps-heading h2 span,
+.cta-inner h2 span {
+    color: var(--pink);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.category-card {
+    position: relative;
+    height: 620px;
+
+    overflow: hidden;
+
+    background: #222;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.04);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.05) 65%
+    );
+}
+
+.category-info {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+
+    color: white;
+}
+
+.category-info span {
+    color: var(--pink);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.category-info h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+}
+
+.category-info p {
+    font-size: 0.8rem;
+    color: #ddd;
+}
+
+
+/* ================= SHOP ================= */
+
+.shop-section {
+    padding: 110px 5vw 130px;
+    background: #fff;
+}
+
+.shop-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 55px;
+}
+
+.shop-heading > p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.filters {
+    display: flex;
+    gap: 25px;
+
+    margin-bottom: 35px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.filter {
+    border: none;
+    background: none;
+
+    padding: 0 0 15px;
+
+    cursor: pointer;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    color: #888;
+
+    position: relative;
+}
+
+.filter.active {
+    color: black;
+}
+
+.filter.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -1px;
+
+    height: 3px;
+
+    background: var(--pink);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 18px;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.product-image {
+    position: relative;
+
+    aspect-ratio: 4 / 5;
+
+    background: #eeeeec;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 8px;
+
+    transition: transform 0.45s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.035);
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    z-index: 2;
+
+    background: var(--pink);
+    color: white;
+
+    padding: 6px 9px;
+
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-top: 15px;
+}
+
+.product-details h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.product-details p {
+    margin-top: 4px;
+
+    font-size: 0.72rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.product-details strong {
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.order-link {
+    display: block;
+
+    margin-top: 13px;
+
+    padding-bottom: 9px;
+
+    border-bottom: 1px solid #ccc;
+
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    transition: 0.3s;
+}
+
+.order-link:hover {
+    color: var(--pink);
+    border-color: var(--pink);
+}
+
+
+/* ================= BRAND ================= */
+
+.brand-section {
+    background: var(--black);
+    color: white;
+
+    padding: 120px 5vw;
+}
+
+.brand-number {
+    color: #666;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+}
+
+.brand-content {
+    max-width: 1200px;
+    margin: 80px auto 0;
+}
+
+.brand-content h2 {
+    font-size: clamp(3.5rem, 8vw, 8rem);
+}
+
+.brand-content h2 span {
+    color: var(--pink);
+}
+
+.brand-content > p {
+    max-width: 520px;
+
+    margin-top: 40px;
+
+    color: #aaa;
+
+    line-height: 1.7;
+}
+
+.brand-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-top: 90px;
+
+    border-top: 1px solid #333;
+}
+
+.brand-features > div {
+    padding-top: 25px;
+}
+
+.brand-features span {
+    color: var(--pink);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.brand-features h3 {
+    margin-top: 18px;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+.brand-features p {
+    margin-top: 10px;
+
+    color: #888;
+
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+
+/* ================= STEPS ================= */
+
+.steps-section {
+    padding: 120px 5vw;
+
+    background: var(--gray);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 90px;
+
+    border-top: 1px solid #c8c8c5;
+}
+
+.step {
+    padding: 28px 25px 0 0;
+
+    border-right: 1px solid #c8c8c5;
+}
+
+.step:not(:first-child) {
+    padding-left: 25px;
+}
+
+.step:last-child {
+    border-right: none;
+}
+
+.step > span {
+    color: var(--pink);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.step h3 {
+    margin-top: 30px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 2rem;
+
+    letter-spacing: -0.04em;
+}
+
+.step p {
+    margin-top: 10px;
+
+    max-width: 260px;
+
+    color: #666;
+
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+
+/* ================= CTA ================= */
+
+.cta-section {
+    padding: 130px 5vw;
+
+    background: white;
+}
+
+.cta-inner {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cta-inner h2 {
+    font-size: clamp(3.5rem, 8vw, 8rem);
+
+    margin-bottom: 45px;
+}
+
+.dark-btn {
+    background: black;
+    color: white;
+}
+
+.dark-btn:hover {
+    background: var(--pink);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: var(--black);
+    color: white;
+
+    padding: 70px 5vw 30px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 60px;
+
+    border-bottom: 1px solid #333;
+}
+
+.footer-logo {
+    font-size: 2rem;
+}
+
+.footer-top p {
+    margin-top: 15px;
+
+    color: #777;
+
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: #aaa;
+
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.footer-links a:hover {
+    color: var(--pink);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 25px;
+
+    color: #555;
+
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+}
+
+
+/* ================= WHATSAPP ================= */
+
+.floating-whatsapp {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 54px;
+    height: 54px;
+
+    z-index: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--pink);
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .desktop-nav,
+    .header-shop {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 78px;
+        left: 0;
+        right: 0;
+
+        z-index: 900;
+
+        display: none;
+        flex-direction: column;
+
+        background: var(--black);
+
+        padding: 25px 5vw;
+    }
+
+    .mobile-menu.show {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        color: white;
+
+        padding: 18px 0;
+
+        border-bottom: 1px solid #292929;
+
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero-image {
+        object-position: center;
+    }
+
+    .hero-dark {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,0.76),
+                rgba(0,0,0,0.3)
+            );
+    }
+
+    .hero-content {
+        padding: 130px 6vw 100px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.5rem, 15vw, 6rem);
+    }
+
+    .hero-content p {
+        max-width: 310px;
+        font-size: 0.88rem;
+    }
+
+    .hero-bottom {
+        left: 6vw;
+        right: 6vw;
+
+        font-size: 0.55rem;
+    }
+
+    .hero-side {
+        display: none;
+    }
+
+
+    /* CATEGORY */
+
+    .category-section {
+        padding: 80px 5vw;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        height: 500px;
+    }
+
+
+    /* SHOP */
+
+    .shop-section {
+        padding: 80px 5vw;
+    }
+
+    .shop-heading {
+        display: block;
+    }
+
+    .shop-heading > p {
+        margin-top: 25px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 12px;
+    }
+
+    .product-image {
+        aspect-ratio: 3 / 4;
+    }
+
+    .product-details {
+        display: block;
+    }
+
+    .product-details strong {
+        display: block;
+        margin-top: 7px;
+    }
+
+
+    /* BRAND */
+
+    .brand-section {
+        padding: 90px 5vw;
+    }
+
+    .brand-content {
+        margin-top: 55px;
+    }
+
+    .brand-features {
+        grid-template-columns: 1fr;
+
+        margin-top: 60px;
+    }
+
+    .brand-features > div {
+        border-top: 1px solid #333;
+        padding-top: 20px;
+    }
+
+
+    /* STEPS */
+
+    .steps-section {
+        padding: 90px 5vw;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+
+        margin-top: 60px;
+    }
+
+    .step,
+    .step:not(:first-child) {
+        border-right: none;
+        border-bottom: 1px solid #c8c8c5;
+
+        padding: 25px 0;
+    }
+
+    .step:last-child {
+        border-bottom: none;
+    }
+
+
+    /* CTA */
+
+    .cta-section {
+        padding: 90px 5vw;
+    }
+
+
+    /* FOOTER */
+
+    .footer-top {
+        display: block;
+    }
+
+    .footer-links {
+        margin-top: 40px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        gap: 20px;
+    }
+
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-actions {
+        gap: 20px;
+    }
+
+    .primary-btn {
+        padding: 14px 17px;
+    }
+
+    .category-card {
+        height: 430px;
+    }
+
+    .products-grid {
+        gap: 30px 10px;
+    }
+
+    .product-details h3 {
+        font-size: 0.82rem;
+    }
+
+    .order-link {
+        font-size: 0.55rem;
+    }
+
+}
+@media (max-width: 900px) {
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+        object-position: center bottom;
+
+        opacity: 0.78;
+    }
+
+    .hero-dark {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(8,8,8,0.88) 0%,
+                rgba(8,8,8,0.55) 45%,
+                rgba(8,8,8,0.15) 100%
+            );
+    }
+
+}
