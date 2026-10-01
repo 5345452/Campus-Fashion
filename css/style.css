@@ -901,13 +901,12 @@ footer {
                 rgba(0,0,0,0.3)
             );
     }
-   .hero-content {
-    padding: 0 25px 70px;
 }
-    .hero {
-    border-top: 3px solid red;
+    .hero-content {
+    padding: 35px 25px 70px;
+    justify-content: flex-start;
 }
-
+    
     .hero h1 {
         font-size: clamp(3.5rem, 15vw, 6rem);
     }
