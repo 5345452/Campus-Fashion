@@ -884,10 +884,10 @@ footer {
     /* HERO */
 
     .hero {
-        height: calc(100svh - 60px);
-        min-height: 650px;
-        margin-top: 60px;
-    }
+    height: calc(100svh - 60px);
+    min-height: 650px;
+    margin-top: 0;
+}
 
     .hero-image {
         object-position: center;
@@ -1104,23 +1104,58 @@ footer {
     }
 
 }
-/* ================= STEPS — DESKTOP LAYOUT ================= */
-
 @media (min-width: 901px) {
 
+    .steps-section {
+        padding: 55px 5vw 60px;
+    }
+
     .steps-heading {
-        display: grid;
-        grid-template-columns: 0.8fr 1.2fr;
-        align-items: start;
-        gap: 60px;
+        width: 42%;
     }
 
     .steps-heading h2 {
-        margin-top: 0;
+        margin-top: 12px;
     }
 
     .steps {
-        margin-top: 65px;
+        width: 52%;
+        margin-left: 48%;
+        margin-top: -210px;
+
+        display: flex;
+        flex-direction: column;
+
+        border-top: 1px solid #c8c8c5;
+    }
+
+    .step,
+    .step:not(:first-child) {
+        display: grid;
+        grid-template-columns: 55px 150px 1fr;
+        align-items: start;
+
+        padding: 25px 0;
+
+        border-right: none;
+        border-bottom: 1px solid #c8c8c5;
+    }
+
+    .step:last-child {
+        border-bottom: none;
+    }
+
+    .step > span {
+        padding-top: 4px;
+    }
+
+    .step h3 {
+        margin-top: 0;
+    }
+
+    .step p {
+        margin-top: 2px;
+        max-width: 320px;
     }
 
 }
