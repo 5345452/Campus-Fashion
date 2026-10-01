@@ -901,10 +901,9 @@ footer {
                 rgba(0,0,0,0.3)
             );
     }
-
     .hero-content {
-        padding: 95px 25px 70px;
-    }
+    padding: 5px 25px 70px;
+}
 
     .hero h1 {
         font-size: clamp(3.5rem, 15vw, 6rem);
