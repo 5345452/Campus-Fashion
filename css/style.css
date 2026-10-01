@@ -847,6 +847,8 @@ footer {
 
     .menu-btn {
         display: block;
+        position: relative;
+        z-index: 1100;
     }
 
     .mobile-menu {
@@ -855,7 +857,7 @@ footer {
         left: 0;
         right: 0;
 
-        z-index: 900;
+        z-index: 950;
 
         display: none;
         flex-direction: column;
@@ -881,31 +883,32 @@ footer {
     }
 
 
-    /* HERO */
+    /* ================= HERO ================= */
 
-   .hero {
-    height: calc(100svh - 60px);
-    min-height: 0;
-    margin-top: 60px;
-}
+     .hero {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 9 / 16;
+        min-height: 0;
+        margin-top: 60px;
+    }
+
+    .hero-content {
+        height: 100%;
+        padding: 35px 25px 70px;
+        justify-content: flex-start;
+    }
 
     .hero-image {
-        object-position: center;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: 65% center;
+
+        opacity: 0.78;
     }
 
-    .hero-dark {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(0,0,0,0.76),
-                rgba(0,0,0,0.3)
-            );
-    }
-    .hero-content {
-    padding: 35px 25px 70px;
-    justify-content: flex-start;
-}
-    
     .hero h1 {
         font-size: clamp(3.5rem, 15vw, 6rem);
     }
@@ -918,7 +921,6 @@ footer {
     .hero-bottom {
         left: 6vw;
         right: 6vw;
-
         font-size: 0.55rem;
     }
 
@@ -926,8 +928,25 @@ footer {
         display: none;
     }
 
+    /*
+       PHONE HERO IMAGE
+       We use cover so the hero fills the phone
+       instead of creating different amounts of
+       empty black space on different screens.
+    */
 
-    /* CATEGORY */
+    .hero-dark {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(8,8,8,0.88) 0%,
+                rgba(8,8,8,0.55) 45%,
+                rgba(8,8,8,0.15) 100%
+            );
+    }
+
+
+    /* ================= CATEGORY ================= */
 
     .category-section {
         padding: 80px 5vw;
@@ -942,7 +961,7 @@ footer {
     }
 
 
-    /* SHOP */
+    /* ================= SHOP ================= */
 
     .shop-section {
         padding: 80px 5vw;
@@ -975,7 +994,7 @@ footer {
     }
 
 
-    /* BRAND */
+    /* ================= BRAND ================= */
 
     .brand-section {
         padding: 90px 5vw;
@@ -987,7 +1006,6 @@ footer {
 
     .brand-features {
         grid-template-columns: 1fr;
-
         margin-top: 60px;
     }
 
@@ -997,39 +1015,38 @@ footer {
     }
 
 
-    /* STEPS */
+    /* ================= STEPS ================= */
 
     .steps-section {
-    padding: 70px 5vw 75px;
-}
+        padding: 70px 5vw 75px;
+    }
 
-.steps {
-    grid-template-columns: 1fr;
-
-    margin-top: 40px;
-}
+    .steps {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
 
     .step,
-.step:not(:first-child) {
-    border-right: none;
-    border-bottom: 1px solid #c8c8c5;
+    .step:not(:first-child) {
+        border-right: none;
+        border-bottom: 1px solid #c8c8c5;
 
-    padding: 20px 0;
-}
+        padding: 20px 0;
+    }
 
     .step:last-child {
         border-bottom: none;
     }
 
 
-    /* CTA */
+    /* ================= CTA ================= */
 
     .cta-section {
         padding: 90px 5vw;
     }
 
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     .footer-top {
         display: block;
@@ -1046,6 +1063,7 @@ footer {
     }
 
 }
+
 
 /* ================= SMALL PHONES ================= */
 
@@ -1077,29 +1095,6 @@ footer {
 
     .order-link {
         font-size: 0.55rem;
-    }
-
-}
-@media (max-width: 900px) {
-
-    .hero-image {
-        width: 100%;
-        height: 100%;
-
-        object-fit: contain;
-        object-position: center bottom;
-
-        opacity: 0.78;
-    }
-
-    .hero-dark {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(8,8,8,0.88) 0%,
-                rgba(8,8,8,0.55) 45%,
-                rgba(8,8,8,0.15) 100%
-            );
     }
 
 }
