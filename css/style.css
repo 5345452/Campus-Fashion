@@ -883,10 +883,10 @@ footer {
 
     /* HERO */
 
-    .hero {
+   .hero {
     height: calc(100svh - 60px);
-    min-height: 650px;
-    margin-top: 0;
+    min-height: 0;
+    margin-top: 60px;
 }
 
     .hero-image {
