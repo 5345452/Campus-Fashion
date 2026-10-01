@@ -901,8 +901,11 @@ footer {
                 rgba(0,0,0,0.3)
             );
     }
-    .hero-content {
-    padding: 5px 25px 70px;
+   .hero-content {
+    padding: 0 25px 70px;
+}
+    .hero {
+    border-top: 3px solid red;
 }
 
     .hero h1 {
