@@ -54,7 +54,7 @@ button {
     top: 0;
     left: 0;
     width: 100%;
-    height: 78px;
+    height: 68px;
     padding: 0 5vw;
 
     display: flex;
@@ -195,7 +195,7 @@ button {
     max-width: 1250px;
     margin: auto;
 
-    padding: 150px 6vw 100px;
+   padding: 150px 6vw 100px;
 
     display: flex;
     flex-direction: column;
@@ -899,7 +899,7 @@ footer {
     }
 
     .hero-content {
-        padding: 130px 6vw 100px;
+        padding: 95px 25px 70px;
     }
 
     .hero h1 {
