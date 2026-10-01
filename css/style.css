@@ -901,7 +901,6 @@ footer {
                 rgba(0,0,0,0.3)
             );
     }
-}
     .hero-content {
     padding: 35px 25px 70px;
     justify-content: flex-start;
@@ -1046,7 +1045,7 @@ footer {
         gap: 20px;
     }
 
-
+}
 
 /* ================= SMALL PHONES ================= */
 
