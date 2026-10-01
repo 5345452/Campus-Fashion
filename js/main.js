@@ -1,45 +1,61 @@
-/* ================= MOBILE MENU ================= */
+/* =====================================================
+   JESTO — MAIN JAVASCRIPT
+   ===================================================== */
+
 
 /* ================= MOBILE MENU ================= */
 
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
+function closeMobileMenu() {
+    if (!menuBtn || !mobileMenu) return;
+
+    mobileMenu.classList.remove("show");
+    menuBtn.classList.remove("active");
+
+    menuBtn.setAttribute("aria-label", "Open menu");
+}
+
+function openMobileMenu() {
+    if (!menuBtn || !mobileMenu) return;
+
+    mobileMenu.classList.add("show");
+    menuBtn.classList.add("active");
+
+    menuBtn.setAttribute("aria-label", "Close menu");
+}
+
 if (menuBtn && mobileMenu) {
+
+    menuBtn.setAttribute("aria-label", "Open menu");
 
     menuBtn.addEventListener("click", (event) => {
 
         event.stopPropagation();
 
-        const isOpen = mobileMenu.classList.toggle("show");
+        const isOpen = mobileMenu.classList.contains("show");
 
-        menuBtn.classList.toggle("active", isOpen);
-
-        menuBtn.setAttribute(
-            "aria-label",
-            isOpen ? "Close menu" : "Open menu"
-        );
-
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     });
 
 
     /* Close when clicking a menu link */
 
-    mobileMenu.querySelectorAll("a").forEach(link => {
+    mobileMenu.querySelectorAll("a").forEach((link) => {
 
         link.addEventListener("click", () => {
-
-            mobileMenu.classList.remove("show");
-            menuBtn.classList.remove("active");
-
-            menuBtn.setAttribute("aria-label", "Open menu");
-
+            closeMobileMenu();
         });
 
     });
 
 
-    /* Close when clicking anywhere outside the menu */
+    /* Close when clicking outside */
 
     document.addEventListener("click", (event) => {
 
@@ -48,12 +64,18 @@ if (menuBtn && mobileMenu) {
             !mobileMenu.contains(event.target) &&
             !menuBtn.contains(event.target)
         ) {
+            closeMobileMenu();
+        }
 
-            mobileMenu.classList.remove("show");
-            menuBtn.classList.remove("active");
+    });
 
-            menuBtn.setAttribute("aria-label", "Open menu");
 
+    /* Close with Escape */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+            closeMobileMenu();
         }
 
     });
@@ -66,43 +88,119 @@ if (menuBtn && mobileMenu) {
 const filters = document.querySelectorAll(".filter");
 const products = document.querySelectorAll(".product-card");
 
-filters.forEach(filter => {
+function filterProducts(selectedCategory, shouldScroll = false) {
+
+    /* Update active filter */
+
+    filters.forEach((filter) => {
+
+        filter.classList.toggle(
+            "active",
+            filter.dataset.filter === selectedCategory
+        );
+
+    });
+
+
+    /* Show / hide products */
+
+    products.forEach((product) => {
+
+        const productCategory = product.dataset.category;
+
+        const shouldShow =
+            selectedCategory === "all" ||
+            productCategory === selectedCategory;
+
+        product.style.display = shouldShow ? "" : "none";
+
+    });
+
+
+    /* Smoothly move to shop */
+
+    if (shouldScroll) {
+
+        const shopSection = document.getElementById("shop");
+
+        if (shopSection) {
+
+            shopSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }
+}
+
+
+/* Filter buttons */
+
+filters.forEach((filter) => {
 
     filter.addEventListener("click", () => {
 
-        const selectedCategory = filter.dataset.filter;
-
-
-        /* active button */
-
-        filters.forEach(item => {
-            item.classList.remove("active");
-        });
-
-        filter.classList.add("active");
-
-
-        /* products */
-
-        products.forEach(product => {
-
-            const productCategory = product.dataset.category;
-
-            if (
-                selectedCategory === "all" ||
-                productCategory === selectedCategory
-            ) {
-
-                product.style.display = "";
-
-            } else {
-
-                product.style.display = "none";
-
-            }
-
-        });
+        filterProducts(
+            filter.dataset.filter,
+            true
+        );
 
     });
+
+});
+
+
+/* ================= CATEGORY CARDS ================= */
+
+const categoryCards = document.querySelectorAll(".category-card");
+
+categoryCards.forEach((card) => {
+
+    card.addEventListener("click", (event) => {
+
+        const selectedCategory = card.dataset.filter;
+
+        if (!selectedCategory) {
+            return;
+        }
+
+        event.preventDefault();
+
+        filterProducts(
+            selectedCategory,
+            true
+        );
+
+    });
+
+});
+
+
+/* ================= WHATSAPP LINKS ================= */
+
+/*
+   Makes sure any old placeholder WhatsApp number
+   in the product links is replaced with your real number.
+*/
+
+const whatsappNumber = "254115134329";
+
+document.querySelectorAll('a[href*="wa.me/"]').forEach((link) => {
+
+    const currentHref = link.getAttribute("href");
+
+    if (!currentHref) return;
+
+    const updatedHref = currentHref.replace(
+        /wa\.me\/\d+/,
+        `wa.me/${whatsappNumber}`
+    );
+
+    link.setAttribute("href", updatedHref);
+
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener");
 
 });

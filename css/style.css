@@ -1,5 +1,6 @@
 /* =====================================================
    JESTO — CAMPUS FASHION
+   CLEAN RESPONSIVE VERSION
    ===================================================== */
 
 :root {
@@ -10,6 +11,7 @@
     --mid-gray: #777;
     --pink: #ff2f92;
     --border: #d8d8d5;
+    --whatsapp: #25D366;
 }
 
 
@@ -46,6 +48,10 @@ button {
     font-family: inherit;
 }
 
+section[id] {
+    scroll-margin-top: 75px;
+}
+
 
 /* ================= HEADER ================= */
 
@@ -53,8 +59,10 @@ button {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 60px;
+
     padding: 0 5vw;
 
     display: flex;
@@ -85,6 +93,7 @@ button {
 
 .desktop-nav {
     display: flex;
+    align-items: center;
     gap: 35px;
 }
 
@@ -93,7 +102,10 @@ button {
     text-transform: uppercase;
     letter-spacing: 0.12em;
     opacity: 0.8;
-    transition: 0.3s;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
 }
 
 .desktop-nav a:hover {
@@ -102,11 +114,17 @@ button {
 }
 
 .header-shop {
-    border: 1px solid rgba(255,255,255,0.7);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
     padding: 11px 18px;
+
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
 }
 
 .header-shop:hover {
@@ -115,22 +133,64 @@ button {
 }
 
 
-/* ================= MOBILE MENU ================= */
+/* ================= MOBILE MENU BUTTON ================= */
 
 .menu-btn {
     display: none;
+
     background: none;
     border: none;
+
     cursor: pointer;
+
+    width: 32px;
+    height: 32px;
+
+    position: relative;
+    z-index: 1100;
+
+    padding: 0;
 }
 
 .menu-btn span {
+    position: absolute;
+    left: 3px;
+
     display: block;
+
     width: 25px;
     height: 2px;
+
     background: white;
-    margin: 5px 0;
+
+    transition:
+        transform 0.25s ease,
+        top 0.25s ease,
+        opacity 0.2s ease;
 }
+
+.menu-btn span:first-child {
+    top: 10px;
+}
+
+.menu-btn span:last-child {
+    top: 18px;
+}
+
+/* HAMBURGER → X */
+
+.menu-btn.active span:first-child {
+    top: 14px;
+    transform: rotate(45deg);
+}
+
+.menu-btn.active span:last-child {
+    top: 14px;
+    transform: rotate(-45deg);
+}
+
+
+/* ================= MOBILE MENU ================= */
 
 .mobile-menu {
     display: none;
@@ -141,21 +201,23 @@ button {
 
 .hero {
     position: relative;
+
     width: 100%;
     height: calc(100svh - 60px);
-    min-height: 600px;
 
     margin-top: 60px;
 
     overflow: hidden;
-    background: #080808;
+
+    background: var(--black);
     color: white;
 }
+
 .hero-image {
     position: absolute;
 
-    right: 0;
     top: 0;
+    right: 0;
 
     width: 62%;
     height: 100%;
@@ -170,6 +232,7 @@ button {
 
     z-index: 1;
 }
+
 .hero-dark {
     position: absolute;
     inset: 0;
@@ -180,11 +243,11 @@ button {
         linear-gradient(
             90deg,
             #080808 0%,
-            rgba(8,8,8,0.98) 25%,
-            rgba(8,8,8,0.82) 38%,
-            rgba(8,8,8,0.35) 53%,
-            rgba(8,8,8,0.05) 72%,
-            rgba(8,8,8,0) 100%
+            rgba(8, 8, 8, 0.98) 25%,
+            rgba(8, 8, 8, 0.82) 38%,
+            rgba(8, 8, 8, 0.35) 53%,
+            rgba(8, 8, 8, 0.05) 72%,
+            rgba(8, 8, 8, 0) 100%
         );
 }
 
@@ -195,9 +258,10 @@ button {
     height: 100%;
 
     max-width: 1250px;
+
     margin: auto;
 
-   
+    padding: 70px 6vw 90px;
 
     display: flex;
     flex-direction: column;
@@ -208,6 +272,7 @@ button {
 .small-label {
     font-size: 0.7rem;
     font-weight: 700;
+
     letter-spacing: 0.18em;
     text-transform: uppercase;
 }
@@ -222,6 +287,7 @@ button {
 
     font-size: clamp(4rem, 9vw, 9rem);
     line-height: 0.84;
+
     letter-spacing: -0.075em;
     font-weight: 700;
 
@@ -232,7 +298,7 @@ button {
     color: var(--pink);
 }
 
-.hero-content p {
+.hero-content > p {
     max-width: 420px;
 
     margin-top: 35px;
@@ -263,15 +329,21 @@ button {
 
     font-size: 0.72rem;
     font-weight: 700;
+
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
-    transition: 0.3s;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .primary-btn:hover {
     background: var(--pink);
     color: white;
+
+    transform: translateY(-3px);
 }
 
 .text-btn {
@@ -279,15 +351,27 @@ button {
 
     font-size: 0.72rem;
     font-weight: 700;
+
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
     border-bottom: 1px solid white;
+
     padding-bottom: 5px;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.text-btn:hover {
+    color: var(--pink);
+    border-color: var(--pink);
 }
 
 .hero-bottom {
     position: absolute;
+
     bottom: 28px;
     left: 6vw;
     right: 6vw;
@@ -298,6 +382,7 @@ button {
     justify-content: space-between;
 
     font-size: 0.62rem;
+
     letter-spacing: 0.16em;
     font-weight: 700;
 
@@ -306,6 +391,7 @@ button {
 
 .hero-side {
     position: absolute;
+
     right: 25px;
     top: 50%;
 
@@ -322,6 +408,7 @@ button {
 
 .category-section {
     padding: 110px 5vw 120px;
+
     background: var(--white);
 }
 
@@ -338,6 +425,7 @@ button {
 
     font-size: clamp(3rem, 7vw, 6.5rem);
     line-height: 0.88;
+
     letter-spacing: -0.07em;
 
     margin-top: 16px;
@@ -353,16 +441,20 @@ button {
 .category-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 18px;
 }
 
 .category-card {
     position: relative;
+
     height: 620px;
 
     overflow: hidden;
 
     background: #222;
+
+    cursor: pointer;
 }
 
 .category-card img {
@@ -371,26 +463,28 @@ button {
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
+    transition: transform 0.65s ease;
 }
 
 .category-card:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 .category-overlay {
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.75),
-        rgba(0,0,0,0.05) 65%
-    );
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.05) 65%
+        );
 }
 
 .category-info {
     position: absolute;
+
     left: 25px;
     bottom: 25px;
 
@@ -399,13 +493,16 @@ button {
 
 .category-info span {
     color: var(--pink);
+
     font-size: 0.7rem;
     font-weight: 700;
 }
 
 .category-info h3 {
     font-family: "Space Grotesk", sans-serif;
+
     font-size: 2.5rem;
+
     letter-spacing: -0.05em;
 }
 
@@ -419,7 +516,8 @@ button {
 
 .shop-section {
     padding: 110px 5vw 130px;
-    background: #fff;
+
+    background: white;
 }
 
 .shop-heading {
@@ -432,6 +530,7 @@ button {
 
 .shop-heading > p {
     color: #666;
+
     line-height: 1.6;
     font-size: 0.9rem;
 }
@@ -455,11 +554,18 @@ button {
 
     font-size: 0.7rem;
     font-weight: 700;
+
     letter-spacing: 0.12em;
 
     color: #888;
 
     position: relative;
+
+    transition: color 0.25s ease;
+}
+
+.filter:hover {
+    color: black;
 }
 
 .filter.active {
@@ -482,12 +588,18 @@ button {
 
 .products-grid {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     gap: 30px 18px;
 }
 
 .product-card {
     min-width: 0;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .product-image {
@@ -517,6 +629,7 @@ button {
 
 .product-badge {
     position: absolute;
+
     top: 12px;
     left: 12px;
 
@@ -529,12 +642,14 @@ button {
 
     font-size: 0.58rem;
     font-weight: 700;
+
     letter-spacing: 0.1em;
 }
 
 .product-details {
     display: flex;
     justify-content: space-between;
+
     gap: 15px;
 
     padding-top: 15px;
@@ -549,12 +664,15 @@ button {
     margin-top: 4px;
 
     font-size: 0.72rem;
+
     color: #888;
+
     text-transform: uppercase;
 }
 
 .product-details strong {
     font-size: 0.9rem;
+
     white-space: nowrap;
 }
 
@@ -569,18 +687,22 @@ button {
 
     font-size: 0.63rem;
     font-weight: 700;
+
     letter-spacing: 0.1em;
 
-    transition: 0.3s;
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .order-link:hover {
     color: var(--pink);
+
     border-color: var(--pink);
 }
 
 
-/* ================= BRAND ================= */
+/* ================= CAMPUS FEATURES ================= */
 
 .brand-section {
     background: var(--black);
@@ -598,6 +720,7 @@ button {
 
 .brand-content {
     max-width: 1200px;
+
     margin: 80px auto 0;
 }
 
@@ -621,21 +744,40 @@ button {
 
 .brand-features {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 30px;
+    gap: 20px;
 
     margin-top: 90px;
-
-    border-top: 1px solid #333;
 }
 
 .brand-features > div {
-    padding-top: 25px;
+    padding: 28px 24px;
+
+    border-top: 1px solid #333;
+    background: rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.brand-features > div:hover {
+    transform: translateY(-7px);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border-color: var(--pink);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
 }
 
 .brand-features span {
     color: var(--pink);
+
     font-size: 0.7rem;
     font-weight: 700;
 }
@@ -644,6 +786,7 @@ button {
     margin-top: 18px;
 
     font-size: 0.8rem;
+
     letter-spacing: 0.1em;
 }
 
@@ -667,6 +810,7 @@ button {
 
 .steps {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
     margin-top: 55px;
@@ -675,9 +819,17 @@ button {
 }
 
 .step {
-    padding: 28px 25px 0 0;
+    padding: 28px 25px 25px 0;
 
     border-right: 1px solid #c8c8c5;
+
+    cursor: default;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        padding 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .step:not(:first-child) {
@@ -686,6 +838,14 @@ button {
 
 .step:last-child {
     border-right: none;
+}
+
+.step:hover {
+    transform: translateY(-7px);
+
+    background: rgba(255, 255, 255, 0.55);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
 }
 
 .step > span {
@@ -727,6 +887,7 @@ button {
 
 .cta-inner {
     max-width: 1200px;
+
     margin: auto;
 }
 
@@ -779,6 +940,7 @@ footer {
 
 .footer-links {
     display: flex;
+
     gap: 30px;
 }
 
@@ -786,8 +948,11 @@ footer {
     color: #aaa;
 
     font-size: 0.7rem;
+
     text-transform: uppercase;
     letter-spacing: 0.1em;
+
+    transition: color 0.25s ease;
 }
 
 .footer-links a:hover {
@@ -803,6 +968,7 @@ footer {
     color: #555;
 
     font-size: 0.62rem;
+
     letter-spacing: 0.1em;
 }
 
@@ -815,28 +981,106 @@ footer {
     right: 22px;
     bottom: 22px;
 
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
 
-    z-index: 500;
+    z-index: 1200;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: var(--pink);
+    background: var(--whatsapp);
     color: white;
 
     border-radius: 50%;
 
-    font-size: 0.65rem;
-    font-weight: 700;
+    font-size: 1.7rem;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: translateY(-6px) scale(1.04);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.28);
+}
+
+.floating-whatsapp:active {
+    transform: scale(0.95);
 }
 
 
-/* ================= MOBILE ================= */
+/* ================= LARGE DESKTOP STEPS ================= */
+
+@media (min-width: 901px) {
+
+    .steps-section {
+        padding: 55px 5vw 60px;
+    }
+
+    .steps-heading {
+        width: 42%;
+    }
+
+    .steps-heading h2 {
+        margin-top: 12px;
+    }
+
+    .steps {
+        width: 52%;
+
+        margin-left: 48%;
+        margin-top: -210px;
+
+        display: flex;
+        flex-direction: column;
+
+        border-top: 1px solid #c8c8c5;
+    }
+
+    .step,
+    .step:not(:first-child) {
+        display: grid;
+
+        grid-template-columns: 55px 150px 1fr;
+
+        align-items: start;
+
+        padding: 25px 0;
+
+        border-right: none;
+
+        border-bottom: 1px solid #c8c8c5;
+    }
+
+    .step:last-child {
+        border-bottom: none;
+    }
+
+    .step > span {
+        padding-top: 4px;
+    }
+
+    .step h3 {
+        margin-top: 0;
+    }
+
+    .step p {
+        margin-top: 2px;
+
+        max-width: 320px;
+    }
+}
+
+
+/* ================= TABLET / PHONE ================= */
 
 @media (max-width: 900px) {
 
@@ -847,12 +1091,11 @@ footer {
 
     .menu-btn {
         display: block;
-        position: relative;
-        z-index: 1100;
     }
 
     .mobile-menu {
         position: fixed;
+
         top: 60px;
         left: 0;
         right: 0;
@@ -860,6 +1103,7 @@ footer {
         z-index: 950;
 
         display: none;
+
         flex-direction: column;
 
         background: var(--black);
@@ -883,20 +1127,22 @@ footer {
     }
 
 
-    /* ================= HERO ================= */
+    /* ================= MOBILE HERO ================= */
 
-     .hero {
+    .hero {
         width: 100%;
-        height: auto;
-        aspect-ratio: 9 / 16;
-        min-height: 0;
-        margin-top: 60px;
-    }
 
-    .hero-content {
-        height: 100%;
-        padding: 35px 25px 70px;
-        justify-content: flex-start;
+        /*
+           Height is based on width instead of screen height.
+           This keeps the hero composition much more consistent
+           between different phones.
+        */
+
+        height: clamp(620px, 175vw, 760px);
+
+        min-height: 0;
+
+        margin-top: 60px;
     }
 
     .hero-image {
@@ -904,45 +1150,68 @@ footer {
         height: 100%;
 
         object-fit: cover;
-        object-position: 65% center;
+
+        /*
+           Keep the upper/middle part of the model visible.
+        */
+
+        object-position: 65% 25%;
 
         opacity: 0.78;
     }
-
-    .hero h1 {
-        font-size: clamp(3.5rem, 15vw, 6rem);
-    }
-
-    .hero-content p {
-        max-width: 310px;
-        font-size: 0.88rem;
-    }
-
-    .hero-bottom {
-        left: 6vw;
-        right: 6vw;
-        font-size: 0.55rem;
-    }
-
-    .hero-side {
-        display: none;
-    }
-
-    /*
-       PHONE HERO IMAGE
-       We use cover so the hero fills the phone
-       instead of creating different amounts of
-       empty black space on different screens.
-    */
 
     .hero-dark {
         background:
             linear-gradient(
                 90deg,
-                rgba(8,8,8,0.88) 0%,
-                rgba(8,8,8,0.55) 45%,
-                rgba(8,8,8,0.15) 100%
+                rgba(8, 8, 8, 0.90) 0%,
+                rgba(8, 8, 8, 0.58) 45%,
+                rgba(8, 8, 8, 0.18) 100%
             );
+    }
+
+    .hero-content {
+        height: 100%;
+
+        padding: 42px 25px 70px;
+
+        justify-content: flex-start;
+    }
+
+    .hero-label {
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.25rem, 15vw, 6rem);
+        line-height: 0.86;
+    }
+
+    .hero-content > p {
+        max-width: 310px;
+
+        margin-top: 28px;
+
+        font-size: 0.88rem;
+    }
+
+    .hero-actions {
+        gap: 20px;
+
+        margin-top: 25px;
+    }
+
+    .hero-bottom {
+        left: 6vw;
+        right: 6vw;
+
+        bottom: 22px;
+
+        font-size: 0.5rem;
+    }
+
+    .hero-side {
+        display: none;
     }
 
 
@@ -977,6 +1246,7 @@ footer {
 
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 35px 12px;
     }
 
@@ -990,6 +1260,7 @@ footer {
 
     .product-details strong {
         display: block;
+
         margin-top: 7px;
     }
 
@@ -1006,12 +1277,12 @@ footer {
 
     .brand-features {
         grid-template-columns: 1fr;
+
         margin-top: 60px;
     }
 
     .brand-features > div {
         border-top: 1px solid #333;
-        padding-top: 20px;
     }
 
 
@@ -1023,12 +1294,14 @@ footer {
 
     .steps {
         grid-template-columns: 1fr;
+
         margin-top: 40px;
     }
 
     .step,
     .step:not(:first-child) {
         border-right: none;
+
         border-bottom: 1px solid #c8c8c5;
 
         padding: 20px 0;
@@ -1036,6 +1309,10 @@ footer {
 
     .step:last-child {
         border-bottom: none;
+    }
+
+    .step:hover {
+        transform: translateY(-4px);
     }
 
 
@@ -1054,14 +1331,15 @@ footer {
 
     .footer-links {
         margin-top: 40px;
+
         flex-wrap: wrap;
+
         gap: 20px;
     }
 
     .footer-bottom {
         gap: 20px;
     }
-
 }
 
 
@@ -1069,12 +1347,24 @@ footer {
 
 @media (max-width: 480px) {
 
+    .hero {
+        height: clamp(600px, 178vw, 700px);
+    }
+
+    .hero-content {
+        padding: 35px 20px 65px;
+    }
+
     .hero h1 {
         font-size: 3.5rem;
     }
 
+    .hero-content > p {
+        max-width: 285px;
+    }
+
     .hero-actions {
-        gap: 20px;
+        gap: 18px;
     }
 
     .primary-btn {
@@ -1097,59 +1387,13 @@ footer {
         font-size: 0.55rem;
     }
 
-}
-@media (min-width: 901px) {
+    .floating-whatsapp {
+        right: 16px;
+        bottom: 16px;
 
-    .steps-section {
-        padding: 55px 5vw 60px;
+        width: 54px;
+        height: 54px;
+
+        font-size: 1.55rem;
     }
-
-    .steps-heading {
-        width: 42%;
-    }
-
-    .steps-heading h2 {
-        margin-top: 12px;
-    }
-
-    .steps {
-        width: 52%;
-        margin-left: 48%;
-        margin-top: -210px;
-
-        display: flex;
-        flex-direction: column;
-
-        border-top: 1px solid #c8c8c5;
-    }
-
-    .step,
-    .step:not(:first-child) {
-        display: grid;
-        grid-template-columns: 55px 150px 1fr;
-        align-items: start;
-
-        padding: 25px 0;
-
-        border-right: none;
-        border-bottom: 1px solid #c8c8c5;
-    }
-
-    .step:last-child {
-        border-bottom: none;
-    }
-
-    .step > span {
-        padding-top: 4px;
-    }
-
-    .step h3 {
-        margin-top: 0;
-    }
-
-    .step p {
-        margin-top: 2px;
-        max-width: 320px;
-    }
-
 }

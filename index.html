@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>JESTO — Campus Fashion</title>
+
     <link rel="icon" type="image/png" href="images/favicon.png">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- JESTO CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -24,7 +37,7 @@
         JESTO<span>.</span>
     </a>
 
-    <nav class="desktop-nav">
+    <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#shop">Shop</a>
         <a href="#about">About</a>
@@ -35,7 +48,14 @@
         Shop now
     </a>
 
-    <button class="menu-btn" id="menuBtn">
+    <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+    >
         <span></span>
         <span></span>
     </button>
@@ -99,9 +119,13 @@
 
     <div class="hero-bottom">
 
-        <span>FREE WALKING DELIVERY</span>
+        <span>
+            FREE WALKING DELIVERY
+        </span>
 
-        <span>AROUND MASENO</span>
+        <span>
+            AROUND MASENO
+        </span>
 
     </div>
 
@@ -110,7 +134,6 @@
     </div>
 
 </section>
-
 
 
 <!-- ================= CATEGORY STRIP ================= -->
@@ -133,7 +156,13 @@
 
     <div class="category-grid">
 
-        <a href="#shop" class="category-card">
+        <!-- TOPS -->
+
+        <a
+            href="#shop"
+            class="category-card"
+            data-filter="tops"
+        >
 
             <img
                 src="images/tops/top1.jpg"
@@ -143,15 +172,29 @@
             <div class="category-overlay"></div>
 
             <div class="category-info">
+
                 <span>01</span>
-                <h3>TOPS</h3>
-                <p>Easy. Cute. Everyday.</p>
+
+                <h3>
+                    TOPS
+                </h3>
+
+                <p>
+                    Easy. Cute. Everyday.
+                </p>
+
             </div>
 
         </a>
 
 
-        <a href="#shop" class="category-card">
+        <!-- SKIRTS -->
+
+        <a
+            href="#shop"
+            class="category-card"
+            data-filter="skirts"
+        >
 
             <img
                 src="images/skirts/skirt1.jpg"
@@ -161,15 +204,29 @@
             <div class="category-overlay"></div>
 
             <div class="category-info">
+
                 <span>02</span>
-                <h3>SKIRTS</h3>
-                <p>Make the outfit.</p>
+
+                <h3>
+                    SKIRTS
+                </h3>
+
+                <p>
+                    Make the outfit.
+                </p>
+
             </div>
 
         </a>
 
 
-        <a href="#shop" class="category-card">
+        <!-- DRESSES -->
+
+        <a
+            href="#shop"
+            class="category-card"
+            data-filter="dresses"
+        >
 
             <img
                 src="images/dresses/dress1.jpg"
@@ -179,9 +236,17 @@
             <div class="category-overlay"></div>
 
             <div class="category-info">
+
                 <span>03</span>
-                <h3>DRESSES</h3>
-                <p>One piece. Done.</p>
+
+                <h3>
+                    DRESSES
+                </h3>
+
+                <p>
+                    One piece. Done.
+                </p>
+
             </div>
 
         </a>
@@ -189,7 +254,6 @@
     </div>
 
 </section>
-
 
 
 <!-- ================= SHOP ================= -->
@@ -224,19 +288,35 @@
 
     <div class="filters">
 
-        <button class="filter active" data-filter="all">
+        <button
+            class="filter active"
+            data-filter="all"
+            type="button"
+        >
             ALL
         </button>
 
-        <button class="filter" data-filter="tops">
+        <button
+            class="filter"
+            data-filter="tops"
+            type="button"
+        >
             TOPS
         </button>
 
-        <button class="filter" data-filter="skirts">
+        <button
+            class="filter"
+            data-filter="skirts"
+            type="button"
+        >
             SKIRTS
         </button>
 
-        <button class="filter" data-filter="dresses">
+        <button
+            class="filter"
+            data-filter="dresses"
+            type="button"
+        >
             DRESSES
         </button>
 
@@ -250,7 +330,10 @@
 
         <!-- TOP 1 -->
 
-        <article class="product-card" data-category="tops">
+        <article
+            class="product-card"
+            data-category="tops"
+        >
 
             <div class="product-image">
 
@@ -268,8 +351,13 @@
             <div class="product-details">
 
                 <div>
-                    <h3>Soft Crop Top</h3>
-                    <p>Tops</p>
+                    <h3>
+                        Soft Crop Top
+                    </h3>
+
+                    <p>
+                        Tops
+                    </p>
                 </div>
 
                 <strong>
@@ -279,9 +367,10 @@
             </div>
 
             <a
-                href="https://wa.me/254700000000?text=Hi%20JESTO,%20I%20want%20the%20Soft%20Crop%20Top"
+                href="https://wa.me/254115134329?text=Hi%20JESTO%2C%20I%20want%20the%20Soft%20Crop%20Top"
                 class="order-link"
                 target="_blank"
+                rel="noopener"
             >
                 ORDER ON WHATSAPP →
             </a>
@@ -289,10 +378,12 @@
         </article>
 
 
-
         <!-- TOP 2 -->
 
-        <article class="product-card" data-category="tops">
+        <article
+            class="product-card"
+            data-category="tops"
+        >
 
             <div class="product-image">
 
@@ -310,8 +401,13 @@
             <div class="product-details">
 
                 <div>
-                    <h3>Everyday Crop Top</h3>
-                    <p>Tops</p>
+                    <h3>
+                        Everyday Crop Top
+                    </h3>
+
+                    <p>
+                        Tops
+                    </p>
                 </div>
 
                 <strong>
@@ -321,9 +417,10 @@
             </div>
 
             <a
-                href="https://wa.me/254700000000?text=Hi%20JESTO,%20I%20want%20the%20Everyday%20Crop%20Top"
+                href="https://wa.me/254115134329?text=Hi%20JESTO%2C%20I%20want%20the%20Everyday%20Crop%20Top"
                 class="order-link"
                 target="_blank"
+                rel="noopener"
             >
                 ORDER ON WHATSAPP →
             </a>
@@ -331,10 +428,12 @@
         </article>
 
 
-
         <!-- TOP 3 -->
 
-        <article class="product-card" data-category="tops">
+        <article
+            class="product-card"
+            data-category="tops"
+        >
 
             <div class="product-image">
 
@@ -348,8 +447,13 @@
             <div class="product-details">
 
                 <div>
-                    <h3>Cute Basic Top</h3>
-                    <p>Tops</p>
+                    <h3>
+                        Cute Basic Top
+                    </h3>
+
+                    <p>
+                        Tops
+                    </p>
                 </div>
 
                 <strong>
@@ -359,9 +463,10 @@
             </div>
 
             <a
-                href="https://wa.me/254700000000?text=Hi%20JESTO,%20I%20want%20the%20Cute%20Basic%20Top"
+                href="https://wa.me/254115134329?text=Hi%20JESTO%2C%20I%20want%20the%20Cute%20Basic%20Top"
                 class="order-link"
                 target="_blank"
+                rel="noopener"
             >
                 ORDER ON WHATSAPP →
             </a>
@@ -369,10 +474,12 @@
         </article>
 
 
-
         <!-- SKIRT 1 -->
 
-        <article class="product-card" data-category="skirts">
+        <article
+            class="product-card"
+            data-category="skirts"
+        >
 
             <div class="product-image">
 
@@ -390,8 +497,13 @@
             <div class="product-details">
 
                 <div>
-                    <h3>Mini Skirt</h3>
-                    <p>Skirts</p>
+                    <h3>
+                        Mini Skirt
+                    </h3>
+
+                    <p>
+                        Skirts
+                    </p>
                 </div>
 
                 <strong>
@@ -401,9 +513,10 @@
             </div>
 
             <a
-                href="https://wa.me/254700000000?text=Hi%20JESTO,%20I%20want%20the%20Mini%20Skirt"
+                href="https://wa.me/254115134329?text=Hi%20JESTO%2C%20I%20want%20the%20Mini%20Skirt"
                 class="order-link"
                 target="_blank"
+                rel="noopener"
             >
                 ORDER ON WHATSAPP →
             </a>
@@ -411,10 +524,12 @@
         </article>
 
 
-
         <!-- SKIRT 2 -->
 
-        <article class="product-card" data-category="skirts">
+        <article
+            class="product-card"
+            data-category="skirts"
+        >
 
             <div class="product-image">
 
@@ -428,8 +543,13 @@
             <div class="product-details">
 
                 <div>
-                    <h3>Maxi Skirt</h3>
-                    <p>Skirts</p>
+                    <h3>
+                        Maxi Skirt
+                    </h3>
+
+                    <p>
+                        Skirts
+                    </p>
                 </div>
 
                 <strong>
@@ -439,9 +559,10 @@
             </div>
 
             <a
-                href="https://wa.me/254700000000?text=Hi%20JESTO,%20I%20want%20the%20Maxi%20Skirt"
+                href="https://wa.me/254115134329?text=Hi%20JESTO%2C%20I%20want%20the%20Maxi%20Skirt"
                 class="order-link"
                 target="_blank"
+                rel="noopener"
             >
                 ORDER ON WHATSAPP →
             </a>
@@ -449,10 +570,12 @@
         </article>
 
 
-
         <!-- DRESS 1 -->
 
-        <article class="product-card" data-category="dresses">
+        <article
+            class="product-card"
+            data-category="dresses"
+        >
 
             <div class="product-image">
 
@@ -470,8 +593,13 @@
             <div class="product-details">
 
                 <div>
-                    <h3>Cute Dress</h3>
-                    <p>Dresses</p>
+                    <h3>
+                        Cute Dress
+                    </h3>
+
+                    <p>
+                        Dresses
+                    </p>
                 </div>
 
                 <strong>
@@ -481,9 +609,10 @@
             </div>
 
             <a
-                href="https://wa.me/254700000000?text=Hi%20JESTO,%20I%20want%20the%20Cute%20Dress"
+                href="https://wa.me/254115134329?text=Hi%20JESTO%2C%20I%20want%20the%20Cute%20Dress"
                 class="order-link"
                 target="_blank"
+                rel="noopener"
             >
                 ORDER ON WHATSAPP →
             </a>
@@ -491,10 +620,12 @@
         </article>
 
 
-
         <!-- DRESS 2 -->
 
-        <article class="product-card" data-category="dresses">
+        <article
+            class="product-card"
+            data-category="dresses"
+        >
 
             <div class="product-image">
 
@@ -508,8 +639,13 @@
             <div class="product-details">
 
                 <div>
-                    <h3>Simple Dress</h3>
-                    <p>Dresses</p>
+                    <h3>
+                        Simple Dress
+                    </h3>
+
+                    <p>
+                        Dresses
+                    </p>
                 </div>
 
                 <strong>
@@ -519,20 +655,19 @@
             </div>
 
             <a
-                href="https://wa.me/254700000000?text=Hi%20JESTO,%20I%20want%20the%20Simple%20Dress"
+                href="https://wa.me/254115134329?text=Hi%20JESTO%2C%20I%20want%20the%20Simple%20Dress"
                 class="order-link"
                 target="_blank"
+                rel="noopener"
             >
                 ORDER ON WHATSAPP →
             </a>
 
         </article>
 
-
     </div>
 
 </section>
-
 
 
 <!-- ================= BRAND SECTION ================= -->
@@ -564,20 +699,38 @@
 
             <div>
                 <span>01</span>
-                <h3>CAREFULLY PICKED</h3>
-                <p>Pieces chosen with campus girls in mind.</p>
+
+                <h3>
+                    CAREFULLY PICKED
+                </h3>
+
+                <p>
+                    Pieces chosen with campus girls in mind.
+                </p>
             </div>
 
             <div>
                 <span>02</span>
-                <h3>EASY ORDERING</h3>
-                <p>See something you like? Just message us.</p>
+
+                <h3>
+                    EASY ORDERING
+                </h3>
+
+                <p>
+                    See something you like? Just message us.
+                </p>
             </div>
 
             <div>
                 <span>03</span>
-                <h3>MASENO DELIVERY</h3>
-                <p>Free walking delivery around campus.</p>
+
+                <h3>
+                    MASENO DELIVERY
+                </h3>
+
+                <p>
+                    Free walking delivery around campus.
+                </p>
             </div>
 
         </div>
@@ -585,7 +738,6 @@
     </div>
 
 </section>
-
 
 
 <!-- ================= HOW IT WORKS ================= -->
@@ -611,26 +763,43 @@
 
         <div class="step">
             <span>01</span>
-            <h3>CHOOSE</h3>
-            <p>Find something you love from the drop.</p>
+
+            <h3>
+                CHOOSE
+            </h3>
+
+            <p>
+                Find something you love from the drop.
+            </p>
         </div>
 
         <div class="step">
             <span>02</span>
-            <h3>MESSAGE</h3>
-            <p>Tap WhatsApp and tell us what you want.</p>
+
+            <h3>
+                MESSAGE
+            </h3>
+
+            <p>
+                Tap WhatsApp and tell us what you want.
+            </p>
         </div>
 
         <div class="step">
             <span>03</span>
-            <h3>DELIVER</h3>
-            <p>We'll meet you around Maseno.</p>
+
+            <h3>
+                DELIVER
+            </h3>
+
+            <p>
+                We'll meet you around Maseno.
+            </p>
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- ================= CTA ================= -->
@@ -648,14 +817,16 @@
             <span>FIT STARTS HERE.</span>
         </h2>
 
-        <a href="#shop" class="primary-btn dark-btn">
+        <a
+            href="#shop"
+            class="primary-btn dark-btn"
+        >
             SHOP THE DROP
         </a>
 
     </div>
 
 </section>
-
 
 
 <!-- ================= FOOTER ================= -->
@@ -666,7 +837,10 @@
 
         <div>
 
-            <a href="#home" class="footer-logo">
+            <a
+                href="#home"
+                class="footer-logo"
+            >
                 JESTO<span>.</span>
             </a>
 
@@ -704,18 +878,20 @@
 </footer>
 
 
-
-<!-- ================= WHATSAPP ================= -->
+<!-- ================= FLOATING WHATSAPP ================= -->
 
 <a
-    href="https://wa.me/254115134329"
+    href="https://wa.me/254115134329?text=Hi%20JESTO%2C%20I%27d%20like%20to%20ask%20about%20your%20clothes."
     class="floating-whatsapp"
     target="_blank"
+    rel="noopener"
     aria-label="Chat with Jesto on WhatsApp"
 >
-    Wa
+    <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script src="js/main.js"></script>
 
