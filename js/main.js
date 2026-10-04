@@ -204,3 +204,75 @@ document.querySelectorAll('a[href*="wa.me/"]').forEach((link) => {
     link.setAttribute("rel", "noopener");
 
 });
+/* =====================================================
+   JESTO INTRO
+   ===================================================== */
+
+const jestoIntro = document.getElementById("jestoIntro");
+
+if (jestoIntro) {
+
+    document.body.style.overflow = "hidden";
+
+    window.addEventListener("load", () => {
+
+        setTimeout(() => {
+
+            jestoIntro.classList.add("hide");
+
+            document.body.style.overflow = "";
+
+        }, 3000);
+
+    });
+
+}
+/* =====================================================
+   CUSTOMER FEEDBACK → WHATSAPP
+   ===================================================== */
+
+const feedbackBtn = document.getElementById("feedbackBtn");
+
+if (feedbackBtn) {
+
+    feedbackBtn.addEventListener("click", () => {
+
+        const clothingSuggestion =
+            document.getElementById("clothingSuggestion").value.trim();
+
+        const websiteFeedback =
+            document.getElementById("websiteFeedback").value.trim();
+
+
+        if (!clothingSuggestion && !websiteFeedback) {
+
+            alert("Tell us something first 😊");
+
+            return;
+        }
+
+
+        const message =
+`Hi JESTO! 👋
+
+I have some feedback for you.
+
+👗 Clothes I'd like to see:
+${clothingSuggestion || "No suggestion yet."}
+
+💻 What I think about the website:
+${websiteFeedback || "No feedback yet."}
+
+Thank you!`;
+
+        const whatsappUrl =
+            `https://wa.me/254115134329?text=${encodeURIComponent(message)}`;
+
+        window.open(
+            whatsappUrl,
+            "_blank"
+        );
+
+    });
+
+}

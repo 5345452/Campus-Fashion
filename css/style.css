@@ -1397,3 +1397,413 @@ footer {
         font-size: 1.55rem;
     }
 }
+/* =====================================================
+   JESTO INTRO / LOADER
+   ===================================================== */
+
+.jesto-intro {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #080808;
+
+    color: white;
+
+    overflow: hidden;
+
+    opacity: 1;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+.jesto-intro.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-inner {
+    width: min(90%, 800px);
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.intro-label {
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.28em;
+
+    color: #aaa;
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    animation: introUp 0.7s ease forwards;
+}
+
+.intro-logo {
+    margin-top: 14px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(4rem, 12vw, 8rem);
+
+    font-weight: 700;
+
+    line-height: 0.85;
+
+    letter-spacing: -0.08em;
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    animation:
+        introUp 0.8s ease 0.25s forwards;
+}
+
+.intro-logo span {
+    color: var(--pink);
+}
+
+.intro-subtitle {
+    margin-top: 15px;
+
+    font-size: clamp(0.7rem, 1.6vw, 0.9rem);
+
+    font-weight: 700;
+
+    letter-spacing: 0.35em;
+
+    color: #ddd;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation:
+        introUp 0.7s ease 0.55s forwards;
+}
+
+.intro-words {
+    position: relative;
+
+    height: 30px;
+
+    margin-top: 55px;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    color: #aaa;
+
+    overflow: hidden;
+}
+
+.intro-words span {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+
+    transform: translateY(25px);
+}
+
+.intro-words span:nth-child(1) {
+    animation:
+        introWord 0.8s ease 0.95s forwards;
+}
+
+.intro-words span:nth-child(2) {
+    animation:
+        introWord 0.8s ease 1.45s forwards;
+}
+
+.intro-words span:nth-child(3) {
+    animation:
+        introWord 0.8s ease 1.95s forwards;
+}
+
+.intro-line {
+    width: 0;
+
+    height: 1px;
+
+    margin: 22px auto 0;
+
+    background: var(--pink);
+
+    animation:
+        introLine 0.8s ease 0.85s forwards;
+}
+
+
+/* ================= INTRO ANIMATIONS ================= */
+
+@keyframes introUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes introWord {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+}
+
+@keyframes introLine {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 90px;
+    }
+
+}
+
+
+/* ================= MOBILE INTRO ================= */
+
+@media (max-width: 480px) {
+
+    .intro-logo {
+        font-size: 4.3rem;
+    }
+
+    .intro-subtitle {
+        font-size: 0.65rem;
+
+        letter-spacing: 0.28em;
+    }
+
+    .intro-words {
+        margin-top: 45px;
+
+        font-size: 0.65rem;
+
+        letter-spacing: 0.13em;
+    }
+
+}
+/* =====================================================
+   CUSTOMER FEEDBACK
+   ===================================================== */
+
+.feedback-section {
+    padding: 110px 5vw;
+    background: var(--black);
+    color: white;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.feedback-intro {
+    position: sticky;
+    top: 100px;
+}
+
+.feedback-intro h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.88;
+
+    letter-spacing: -0.07em;
+
+    margin-top: 16px;
+}
+
+.feedback-intro h2 span {
+    color: var(--pink);
+}
+
+.feedback-intro > p {
+    max-width: 430px;
+
+    margin-top: 35px;
+
+    color: #999;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.feedback-box {
+    padding: 35px;
+
+    background: #111;
+
+    border: 1px solid #292929;
+}
+
+.feedback-box label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.feedback-box textarea {
+    width: 100%;
+
+    margin-bottom: 28px;
+
+    padding: 18px;
+
+    resize: vertical;
+
+    min-height: 120px;
+
+    border: 1px solid #333;
+
+    background: #080808;
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.feedback-box textarea:focus {
+    border-color: var(--pink);
+    background: #0c0c0c;
+}
+
+.feedback-box textarea::placeholder {
+    color: #666;
+}
+
+.feedback-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 16px 20px;
+
+    background: white;
+    color: black;
+
+    cursor: pointer;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.feedback-btn:hover {
+    background: var(--pink);
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+.feedback-note {
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 0.68rem;
+}
+
+
+/* ================= MOBILE FEEDBACK ================= */
+
+@media (max-width: 900px) {
+
+    .feedback-section {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 80px 5vw;
+    }
+
+    .feedback-intro {
+        position: static;
+    }
+
+    .feedback-box {
+        padding: 25px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .feedback-box {
+        padding: 20px;
+    }
+
+    .feedback-intro h2 {
+        font-size: 3.3rem;
+    }
+
+}
